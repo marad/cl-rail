@@ -2,7 +2,12 @@
 
 (defpackage #:rail
   (:use #:cl)
-  (:export :succeed
+  (:export :success
+           :failure
+           :branch-value
+           :branch-messages
+           :branch-name
+           :succeed
            :ok
            :fail
            :either

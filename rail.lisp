@@ -70,16 +70,17 @@
 (defun flat-map (f branch) "Alias for bind" (bind f branch))
 
 (defgeneric fapply (f-branch v-branch)
-  (:documentation "Applies function stored as a value in f-branch to value stored in v-branch."))
+  (:documentation "Applies function (value -> value) stored as a value in f-branch to value stored in v-branch."))
 
 (defmethod fapply ((f-branch success) (v-branch success))
-  (succeed (funcall (branch-value f-branch) (branch-value v-branch))))
+  (succeed (funcall (branch-value f-branch) (branch-value v-branch))
+           (concatenate 'list (branch-messages f-branch) (branch-messages v-branch))))
 
 (defmethod fapply ((f-branch branch) (v-branch branch))
   (fail (concatenate 'list (branch-messages f-branch) (branch-messages v-branch))))
 
 (defun lift (f branch)
-  "Given a function f applies it to value stored in branch"
+  "Given a function f :   applies it to value stored in branch"
   (fapply (succeed f) branch))
 
 (defun fmap (f branch)
