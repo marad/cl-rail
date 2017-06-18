@@ -1,0 +1,21 @@
+* Rail
+
+With rail you can handle errors in functional way and remove many error checks.
+It is implementation of [[https://fsharpforfunandprofit.com/rop/][Railway Oriented Programing]].
+
+* Usage
+
+Currently, to use rail, you must checkout this source code into your quicklisp local-projects directory.
+Then it'll be available for quickload:
+
+#+NAME: quickloading
+#+BEGIN_SRC lisp
+(ql:quickload :rail)
+#+END_SRC
+
+If you'd like to know why or how you should definitely view the talk and the post by Scott Wlaschin.
+For now there is not that much examples of usage but you can see the clojure`s implementation example of
+FizzBuzz [[https://github.com/marad/rail/blob/master/examples/fizzbuzz.clj][here]]. 
+
+To see how it's used in real world to handle errors you can look at simple example of reading some
+metadata from file (which can obviously fail) in my [[https://github.com/marad/fm/blob/master/fm.lisp#L115][tool to manage project folders]] (the part in ->> form).
