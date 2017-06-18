@@ -5,7 +5,8 @@ It is implementation of [[https://fsharpforfunandprofit.com/rop/][Railway Orient
 
 * Usage
 
-Currently, to use rail, you must checkout this source code into your quicklisp local-projects directory.
+*Currently, to use rail, you must checkout this source code into your quicklisp local-projects directory.*
+
 Then it'll be available for quickload:
 
 #+NAME: quickloading
